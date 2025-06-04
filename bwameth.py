@@ -334,7 +334,8 @@ def rname(fq1, fq2=""):
 def bwa_mem(fa, fq_convert_cmd, extra_args, threads=1, rg=None,
             paired=True, set_as_failed=None, do_not_penalize_chimeras=False):
     conv_fa = convert_fasta(fa, just_name=True)
-
+    # Currently use bwa-mem only
+    idx = "mem1"
     # if is_newer_b(conv_fa, (conv_fa + '.amb', conv_fa + '.sa')):
     #     idx = "mem1"
     #     sys.stderr.write("--------------------\n")
