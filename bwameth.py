@@ -335,18 +335,18 @@ def bwa_mem(fa, fq_convert_cmd, extra_args, threads=1, rg=None,
             paired=True, set_as_failed=None, do_not_penalize_chimeras=False):
     conv_fa = convert_fasta(fa, just_name=True)
 
-    if is_newer_b(conv_fa, (conv_fa + '.amb', conv_fa + '.sa')):
-        idx = "mem1"
-        sys.stderr.write("--------------------\n")
-        sys.stderr.write("Found BWA MEM index\n")
+    # if is_newer_b(conv_fa, (conv_fa + '.amb', conv_fa + '.sa')):
+    #     idx = "mem1"
+    #     sys.stderr.write("--------------------\n")
+    #     sys.stderr.write("Found BWA MEM index\n")
         
-    elif is_newer_b(conv_fa, (conv_fa + '.amb', conv_fa + '.pac')):
-        idx = "mem2"
-        sys.stderr.write("---------------------\n")
-        sys.stderr.write("Found BWA MEM2 index\n")
+    # elif is_newer_b(conv_fa, (conv_fa + '.amb', conv_fa + '.pac')):
+    #     idx = "mem2"
+    #     sys.stderr.write("---------------------\n")
+    #     sys.stderr.write("Found BWA MEM2 index\n")
         
-    else:
-        raise BWAMethException("first run bwameth.py index %s OR bwameth.py index-mem2 %s OR make sure the modification time on the generated c2t files is newer than on the .fa file" % (fa, fa))
+    # else:
+    #     raise BWAMethException("first run bwameth.py index %s OR bwameth.py index-mem2 %s OR make sure the modification time on the generated c2t files is newer than on the .fa file" % (fa, fa))
 
 
     if not rg is None and not rg.startswith('@RG'):
